@@ -18,12 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from . import views 
 urlpatterns = [
-    path('',views.login,name='login'),
-    path('tasks/', views.tasks, name="tasks"),
-    path('register/',views.register,name='register'),
-    path('logout/',views.logoutUser,name='logoutUser'),
-    path('delete/<str:name>/',views.delete_task,name='delete'),
-    path('update/<str:name>/',views.update_task,name='update'),
-    
+    path('',views.loginView.as_view(),name='login'),
+    path('tasks/', views.tasksView.as_view(), name="tasks"),
+    path('register/',views.registerView.as_view(),name='register'),
+    path('logout/',views.logoutView.as_view(),name='logoutUser'),
+    path('delete/<str:name>/',views.deleteView.as_view(),name='delete'),
+    path('update/<str:name>/',views.updateView.as_view(),name='update'),  
     
 ]
